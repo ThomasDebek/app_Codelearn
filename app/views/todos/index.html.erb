@@ -1,5 +1,13 @@
 <title>Shared Todo App </title>
+
 <div class="container">
+  <div>
+    <p>All your todos here</p>
+    <%= form_tag('/todos/add', :method=>"post") do %>
+        <%= text_field_tag(:todo_text) %>
+        <%= submit_tag("Add todo", :class=>"btn") %>
+    <% end %>
+  </div>
   <div class="row">
     <div class="span4">
       <h1>Shared Todo App</h1>
@@ -13,14 +21,10 @@
     </div>
   </div>
 
-  <div>
-    <p>All your todos here</p>
-    <%= form_tag('/todos/add', :method=>"post") do %>
-        <%= text_field_tag(:todo_text) %>
-        <%= submit_tag("Add todo", :class=>"btn") %>
-    <% end %>
-  </div>
+
   <%= link_to "Delete last todo", delete_path %>
+
+
 </div>
 
 
